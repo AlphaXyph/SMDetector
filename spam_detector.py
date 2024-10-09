@@ -8,25 +8,30 @@ class SpamDetector:
     def __init__(self):
         self.vectorizer = CountVectorizer()
         self.model = MultinomialNB()
+        self.is_first_fit = True  # Flag to track first fit
 
     def train(self, data_path_pattern):
-        # Load and process all chunks matching the pattern
+        first_chunk = True  # Track if processing the first chunk
+
         for file in glob.glob(data_path_pattern):
-            self.process_chunk(pd.read_csv(file))
+            chunk = pd.read_csv(file)
 
-    def process_chunk(self, chunk):
-        # Preprocessing text data
-        chunk['text'] = chunk['text'].apply(self.clean_text)
+            # Preprocessing text data
+            chunk['text'] = chunk['text'].apply(self.clean_text)
 
-        # Split data into features and labels
-        X = chunk['text']
-        y = chunk['label']
+            # Split data into features and labels
+            X = chunk['text']
+            y = chunk['label']
 
-        # Fit the vectorizer and transform the text
-        X_vectorized = self.vectorizer.fit_transform(X)
-
-        # Train the model (you might want to append to existing data)
-        self.model.partial_fit(X_vectorized, y)
+            if first_chunk:
+                # Fit the vectorizer and transform the first chunk
+                X_vectorized = self.vectorizer.fit_transform(X)
+                self.model.fit(X_vectorized, y)  # Fit the model on the first chunk
+                first_chunk = False  # Update flag to false after processing the first chunk
+            else:
+                # Transform the text for subsequent chunks using the already fitted vectorizer
+                X_vectorized = self.vectorizer.transform(X)
+                self.model.partial_fit(X_vectorized, y, classes=[0, 1])  # Specify classes explicitly
 
     def clean_text(self, text):
         # Simple text cleaning
