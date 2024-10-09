@@ -1,7 +1,7 @@
 document.getElementById('checkSpam').addEventListener('click', function() {
     const emailText = document.getElementById('emailText').value;
 
-    fetch('http://127.0.0.1:5000/predict', {
+    fetch('https://smdetector.onrender.com/predict', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
