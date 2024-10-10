@@ -22,3 +22,18 @@ You can access the backend API at: [SMDetector on Render](https://smdetector.onr
 1. Clone or download this repository:
    ```bash
    git clone https://github.com/AlphaXyph/SMDetector.git
+
+2. Open Google Chrome and navigate to chrome://extensions/.
+
+3. Enable Developer Mode (toggle in the top right corner).
+
+4. Click on "Load Unpacked" and select the folder where you downloaded/cloned this repository.
+
+5. The Spam Email Detector extension should now be loaded into Chrome.
+
+## Usage
+6. Click on the Spam Email Detector extension icon in your Chrome toolbar.
+7. A popup will appear with a textarea.
+8. Paste the email content you want to check.
+9. Press Check if Spam.
+10. The result will be displayed (either "This is SPAM" or "This is NOT SPAM").
