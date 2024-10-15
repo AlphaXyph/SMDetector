@@ -37,3 +37,26 @@ You can access the backend API at: [SMDetector on Render](https://smdetector.onr
 8. Paste the email content you want to check.
 9. Press Check if Spam.
 10. The result will be displayed (either "This is SPAM" or "This is NOT SPAM").
+
+## Test Cases
+
+The following are some test cases used to evaluate the Spam Email Detector. These are example email contents along with the expected results (whether the email is Spam or Not Spam).
+
+| Email Content                                                                                     | Expected Result |
+|---------------------------------------------------------------------------------------------------|-----------------|
+| "Congratulations! You've won a $1000 Walmart gift card. Click here to claim your prize!"          | Spam            |
+| "Urgent: Please update your password immediately to keep your account secure."                    | Spam            |
+| "Hey, just wanted to check in on you. How have you been?"                                         | Not Spam        |
+| "Act now! Limited time offer on exclusive products just for you!"                                 | Spam            |
+| "Your invoice for last month is attached. Please let us know if you have any questions."          | Not Spam        |
+| "FREE trial of our premium service! Sign up now!"                                                 | Spam            |
+| "Reminder: Your appointment is scheduled for tomorrow at 3 PM."                                   | Not Spam        |
+| "You have been selected to participate in our market research. Click the link to start!"          | Spam            |
+| "Thank you for your recent purchase! Here are your order details."                                | Not Spam        |
+| "Don't miss out! Join millions of people who have already signed up for our newsletter!"          | Spam            |
+| "I need your help urgently! Can you please call me back as soon as you see this?"                 | Not Spam        |
+| "You've received a new message from your bank. Please click here to view it."                     | Spam            |
+| "Your feedback is important to us. Please take a moment to complete this short survey."           | Not Spam        |
+| "Important: Changes to your account have been made. Please log in to review them."                | Spam            |
+| "Can we reschedule our meeting? Let me know what works for you."                                  | Not Spam        |
+
