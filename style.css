@@ -42,18 +42,16 @@ textarea {
     resize: none;
 }
 
-/* Success (Not Spam) style */
-.result-box.not-spam {
-    background-color: #d4edda; /* Light green background */
-    color: #155724; /* Dark green text */
+/* Styling the result text */
+.result-box {
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px; /* Curved borders for the result box */
+    color: #333;
+    min-height: 40px;
+    line-height: 40px;
 }
-
-/* Danger (Spam) style */
-.result-box.spam {
-    background-color: #f8d7da; /* Light red background */
-    color: #721c24; /* Dark red text */
-}
-
 
 /* Styling the Check Spam button */
 button {
@@ -71,27 +69,14 @@ button {
 button:hover {
     background-color: #45a049;
 }
-
-/* Styling the result text */
-.result-box {
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 4px; /* Curved borders for the result box */
-    color: #333;
-    min-height: 40px;
-    line-height: 40px;
-}
-
 /* Success (Not Spam) style */
 .result-box.not-spam {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
 }
 
 /* Danger (Spam) style */
 .result-box.spam {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
 }
