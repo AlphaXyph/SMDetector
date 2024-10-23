@@ -9,7 +9,7 @@ CORS(app)  # Enable CORS for all routes
 detector = SpamDetector()
 
 # Load dataset and train the model
-detector.train('dataset_chunks/spam_ham_chunk_*.csv')  # Load all chunked files
+detector.train('dataset_chunks/spam_email_dataset_*.csv')  # Load all chunked files
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -46,7 +46,7 @@ def feedback():
 @app.route('/retrain', methods=['POST'])
 def retrain():
     # Retrain the model including feedback
-    detector.train('dataset_chunks/spam_ham_chunk_*.csv')  # Load all chunked files again
+    detector.train('dataset_chunks/spam_email_dataset_*.csv')  # Load all chunked files again
     return jsonify({'message': 'Model retrained successfully'})
 
 if __name__ == '__main__':

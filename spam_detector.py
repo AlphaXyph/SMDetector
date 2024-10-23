@@ -1,13 +1,14 @@
 import pandas as pd
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer  # Import TF-IDF Vectorizer
 import re
 import glob
 import os
 
 class SpamDetector:
     def __init__(self):
-        self.vectorizer = CountVectorizer()
+        # Initialize the TF-IDF Vectorizer with trigram support
+        self.vectorizer = TfidfVectorizer(ngram_range=(1, 3))  # Use unigrams, bigrams, and trigrams
         self.model = MultinomialNB()
         self.feedback_file = 'feedback.csv'  # Path to the feedback file
 
