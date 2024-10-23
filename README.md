@@ -40,23 +40,23 @@ You can access the backend API at: [SMDetector on Render](https://smdetector.onr
 
 ## Test Cases
 
-The following are some test cases used to evaluate the Spam Email Detector. These are example email contents along with the expected results (whether the email is Spam or Not Spam).
+The following are some test cases used to evaluate the Spam Email Detector. These are example email contents along with the expected results (whether the email is Spam - 1 or Not Spam - 0).
 
-| Email Content                                                                                     | Expected Result |
-|---------------------------------------------------------------------------------------------------|-----------------|
-| "Congratulations! You've won a $1000 Walmart gift card. Click here to claim your prize!"          | Spam            |
-| "Urgent: Please update your password immediately to keep your account secure."                    | Spam            |
-| "Hey, just wanted to check in on you. How have you been?"                                         | Not Spam        |
-| "Act now! Limited time offer on exclusive products just for you!"                                 | Spam            |
-| "Your invoice for last month is attached. Please let us know if you have any questions."          | Not Spam        |
-| "FREE trial of our premium service! Sign up now!"                                                 | Spam            |
-| "Reminder: Your appointment is scheduled for tomorrow at 3 PM."                                   | Not Spam        |
-| "You have been selected to participate in our market research. Click the link to start!"          | Spam            |
-| "Thank you for your recent purchase! Here are your order details."                                | Not Spam        |
-| "Don't miss out! Join millions of people who have already signed up for our newsletter!"          | Spam            |
-| "I need your help urgently! Can you please call me back as soon as you see this?"                 | Not Spam        |
-| "You've received a new message from your bank. Please click here to view it."                     | Spam            |
-| "Your feedback is important to us. Please take a moment to complete this short survey."           | Not Spam        |
-| "Important: Changes to your account have been made. Please log in to review them."                | Spam            |
-| "Can we reschedule our meeting? Let me know what works for you."                                  | Not Spam        |
+| **Email Text**                                                                                                | **Expected Label** |
+|---------------------------------------------------------------------------------------------------------------|--------------------|
+| "Hey, how are you doing? Just wanted to check in and say hello."                                                | 0                  |
+| "Congratulations! You've won a prize. Click here to claim your reward: http://malicious-site.com"               | 1                  |
+| "Good morning, looking forward to our meeting next week. Best regards, John"                                   | 0                  |
+| "You have an unclaimed reward waiting. Urgent! Update your account here: http://fake-bank-login.com"            | 1                  |
+| "Hi, we noticed unusual activity on your account. Click here to secure it: http://malicious-site.com"           | 1                  |
+| "Hello, I wanted to remind you about the project deadline. Let's catch up soon."                               | 0                  |
+| "You've won a free gift card with your next purchase! Click here to redeem: http://fraud-site.biz"              | 1                  |
+| "Hey, long time no see! Let's grab lunch this weekend if you're free."                                         | 0                  |
+| "Important! Your account has been compromised. Please update your information now: http://phishing-link.co"     | 1                  |
+| "Hi, please review the attached contract and let me know your feedback. Thank you."                            | 0                  |
+| "Limited time offer! Get rich quick by investing in this one simple trick. Act fast!"                          | 1                  |
+| "Hey, I just wanted to share this amazing opportunity with you. Click here for more details: http://spam-link" | 1                  |
+| "Hello, your invoice for last month is overdue. Please pay here: http://legitimate-payment.com"                 | 0                  |
+| "Hi, don't miss out on this once-in-a-lifetime opportunity! Click here for more info: http://spam-site.com"    | 1                  |
+| "Just a quick follow-up on our conversation. Let me know if you need anything."                                | 0                  |
 
