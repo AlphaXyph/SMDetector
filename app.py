@@ -8,7 +8,7 @@ CORS(app)
 detector = SpamDetector()
 
 # Train your model with the chunked dataset in the dataset_chunks directory
-detector.train('dataset_chunks/spam_ham_chunk_*.csv')  # Load all chunked files
+detector.train('dataset_chunks/spam_email_dataset_*.csv')  # Load all chunked files
 
 @app.route('/predict', methods=['POST'])
 def predict():
